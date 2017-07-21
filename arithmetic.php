@@ -1,23 +1,42 @@
 <?php
 
-function add($a, $b)
-{
-    return $a + $b;
+function add($a, $b){
+    if (is_numeric($a) && is_numeric($b)) {
+        return $a + $b;
+    }
+    return "Error: input(s) not numeric!";
 }
 
-function subtract($a, $b)
-{
-    // Add code here
+function subtract($a, $b) {
+    if (is_numeric($a) && is_numeric($b)) {
+        return $a - $b;    
+    }
+    return "Error: input(s) not numeric!";
 }
 
-function multiply($a, $b)
-{
-    // Add code here
+function multiply($a, $b) {
+    if (is_numeric($a) && is_numeric($b)) {
+        return $a * $b;
+    }
+    return "Error: input(s) not numeric!";
 }
 
-function divide($a, $b)
-{
-    // Add code here
+function divide($a, $b) {
+    if (is_numeric($a) && is_numeric($b)) {
+        return $a / $b;
+    }
+    return "Error: input(s) not numeric!";
 }
 
 // Add code to test your functions here
+
+for ($i = 0; $i < 4; $i++){
+    $a = [0, "5", 4, 6];
+    $b = [6, 4, "Bob", null];
+
+    echo "Test " . ($i + 1) . ": " . PHP_EOL . "-------" . PHP_EOL .
+        $a[$i] . " + " . $b[$i]. " = " . add($a[$i], $b[$i]) . PHP_EOL .
+        $a[$i] . " - " . $b[$i] . " = " . subtract($a[$i], $b[$i]) . PHP_EOL .
+        $a[$i] . " * " . $b[$i] . " = " . multiply($a[$i], $b[$i]) . PHP_EOL .
+        $a[$i] . " / " . $b[$i] . " = " . divide($a[$i], $b[$i]) . PHP_EOL;
+}       
