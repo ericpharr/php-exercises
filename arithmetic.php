@@ -4,27 +4,31 @@ function add($a, $b){
     if (is_numeric($a) && is_numeric($b)) {
         return $a + $b;
     }
-    return "Error: input(s) not numeric!";
+   return error();
 }
 
 function subtract($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return $a - $b;    
     }
-    return "Error: input(s) not numeric!";
+    return error();
 }
 
 function multiply($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return $a * $b;
     }
-    return "Error: input(s) not numeric!";
+    return error();
 }
 
 function divide($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return $a / $b;
     }
+    return error();
+}
+
+function error() {
     return "Error: input(s) not numeric!";
 }
 
