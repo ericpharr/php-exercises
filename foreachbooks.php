@@ -27,10 +27,12 @@ $books = array(
 // Have it output the book's title, then list the key value pairs for the data about each book.
 
 foreach($books as $key => $value){
-    echo "--------------" . PHP_EOL;
-    echo $key . PHP_EOL;
-    foreach($value as $key => $value){
-        echo "$key: $value" . PHP_EOL;
+    if ($value['published'] > 1950){
+        echo "--------------" . PHP_EOL;
+        echo $key . PHP_EOL;
+        foreach($value as $key => $value){
+            echo "$key: $value" . PHP_EOL;
+        }
     }
 }
 
