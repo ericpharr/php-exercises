@@ -12,8 +12,14 @@ class Square extends Rectangle
 		$this->side = $side;
 	}
 
-	public function perimeter(){
+	public function area()
+	{
+		echo "[SQUARE METHOD OVERRIDE] ";
+		return $this->side ** 2;
+	}
 
+	public function perimeter(){
+		echo "[SQUARE METHOD OVERRIDE] ";
 		return $this->side * 4;
 	}
 }
