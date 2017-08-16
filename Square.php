@@ -4,24 +4,34 @@ require_once 'Rectangle.php';
 
 class Square extends Rectangle
 {
-	public $side;
+	private $side;
 
 	public function __construct($side)
 	{
 		parent::__construct($side, $side);
-		$this->side = $side;
+		$this->setSide($side);
 	}
 
-	public function area()
+	protected function setSide($side)
 	{
-		echo "[SQUARE METHOD OVERRIDE] ";
-		return $this->side ** 2;
+		return $this->side = $side;
 	}
 
-	public function perimeter(){
-		echo "[SQUARE METHOD OVERRIDE] ";
-		return $this->side * 4;
+	public function getSide()
+	{
+		return $this->side;
 	}
+
+	// public function area()
+	// {
+	// 	echo "[SQUARE METHOD OVERRIDE] ";
+	// 	return $this->side ** 2;
+	// }
+	//
+	// public function perimeter(){
+	// 	echo "[SQUARE METHOD OVERRIDE] ";
+	// 	return $this->side * 4;
+	// }
 }
 
  ?>

@@ -2,26 +2,48 @@
 
 class Rectangle
 {
-	public $length;
+	private $length;
 
-	public $width;
+	private $width;
 
 	public function __construct($length, $width)
 	{
-		$this->length = $length;
+		// $this->length = $length;
+		$this->setLength($length);
 
-		$this->width = $width;
+		// $this->width = $width;
+		$this->setWidth($width);
 
 	}
 
 	public function area()
 	{
-		return $this->length * $this->width;
+		return $this->getLength() * $this->getWidth();
 	}
 
 	public function perimeter()
 	{
-		return $this->length * 2 + $this->width * 2;
+		return $this->getLength() * 2 + $this->getWidth() * 2;
+	}
+
+	protected function setLength($length)
+	{
+		$this->length = $length;
+	}
+
+	protected function setWidth($width)
+	{
+		$this->width = $width;
+	}
+
+	public function getLength()
+	{
+		return $this->length;
+	}
+
+	public function getWidth()
+	{
+		return $this->width;
 	}
 }
 

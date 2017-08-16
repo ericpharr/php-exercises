@@ -1,11 +1,14 @@
 <?php
 class Log
 {
-	public $filename;
-	public $handle;
+	private $filename;
+	private $handle;
 
 	function __construct($prefix = 'log')
 	{
+		if (!is_string($prefix)){
+			$prefix = 'log'
+		}
 		$this->filename = $prefix . date("Y-m-d") . ".log";
 		$this->handle = fopen($this->filename, 'a');
 	}
@@ -29,6 +32,10 @@ class Log
 	    // fclose($handle);
 	}
 
+	private function setHandle()
+	{
+
+	}
 	function __destruct()
 	{
 		fclose($this->handle);
